@@ -1,0 +1,55 @@
+snippet #! "head" A
+#!/bin/bash
+endsnippet
+
+snippet subm "head" b
+sbatch -p cn-short -A zeminz_g1 --qos=zeminzcns -J ydc -c 20 -o ./log/${1:outname}.out -e ./log/${2:error_name}.err ./${3:script}.sh ${4:args} 
+endsnippet
+
+snippet /case|sw(itch)?/ "case .. esac (case)" 
+case ${1:word} in
+	${2:pattern} )
+		${0:${VISUAL}};;
+esac
+endsnippet
+
+snippet elif "elif .. (elif)" b
+elif ${2:[[ ${1:condition} ]]}; then
+	${0:${VISUAL}}
+endsnippet
+
+snippet for "for ... done (for)" b  
+for (( i = 0; i < ${1:10}; i++ )); do
+	${0:${VISUAL}}
+done
+endsnippet
+
+snippet forin "for ... in ... done (forin)" b
+for ${1:i} in ${2}; do
+	${0:${VISUAL}}
+done
+endsnippet
+
+snippet if "if ... then (if)" b
+if [[ ${1:condition} ]]; then
+	${0:${VISUAL}}
+fi
+endsnippet
+
+snippet until "until ... (done)" b
+until ${2:[[ ${1:condition} ]]}; do
+	${0:${VISUAL}}
+done
+endsnippet
+
+snippet /wh(ile)?/ "while ... (done)" b
+while ${2:[[ ${1:condition} ]]}; do
+	${0:${VISUAL}}
+done
+endsnippet
+
+snippet func "function() {...}" b
+${1:function} () {
+	${0:${VISUAL}}
+}
+endsnippet

@@ -1,0 +1,181 @@
+
+snippet #! "#!/usr/bin/env Rscript" b
+#!/usr/bin/env Rscript
+$0
+endsnippet
+
+snippet lib "Import a library" A
+library('${1:${VISUAL:package}}') $0
+endsnippet
+
+snippet req "Require a file" 
+require('${0:${VISUAL:package}}')
+endsnippet
+
+snippet source "Source a file"
+source('${0:${VISUAL:file}}')
+endsnippet
+
+snippet if "If statement" 
+if (${1:condition}) {
+	${2}
+}
+$0
+endsnippet
+
+snippet eif "Else-If statement"
+else if ($1) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet el "Else statement" A
+else {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet ife "if .. else" A
+if ($1) {
+	${2:${VISUAL}}
+} else {
+	$0
+}
+endsnippet
+
+snippet wh "while loop" A
+while($1) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet for "for loop" A
+for (${1:item} in ${2:list}) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet fun "Function definition" A
+${1:name} <- function ($2) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet ret "Return call"
+return(${0:${VISUAL}})
+endsnippet
+
+snippet df "Data frame"
+${1:name}[${2:rows}, ${0:cols}]
+endsnippet
+
+snippet c "c function"
+c(${0:${VISUAL:items}})
+endsnippet
+
+snippet li "list function"
+list(${0:${VISUAL:items}})
+endsnippet
+
+snippet mat "matrix function"
+matrix(${1:${VISUAL:data}}, nrow = ${2:rows}, ncol = ${0:cols})
+endsnippet
+
+snippet apply "apply function"
+apply(${1:${VISUAL:array}}, ${2:margin}, ${0:function})
+endsnippet
+
+snippet lapply "lapply function"
+lapply(${1:${VISUAL:list}}, ${0:function})
+endsnippet
+
+snippet sapply "sapply function"
+sapply(${1:${VISUAL:list}}, ${0:function})
+endsnippet
+
+snippet vapply "vapply function"
+vapply(${1:${VISUAL:list}}, ${2:function}, ${0:type})
+endsnippet
+
+snippet mapply "mapply function"
+mapply(${1:${VISUAL:function}}, ${0:...})
+endsnippet
+
+snippet tapply "tapply function"
+tapply(${1:${VISUAL:vector}}, ${2:index}, ${0:function})
+endsnippet
+
+snippet rapply "rapply function"
+rapply(${1:${VISUAL:list}}, ${0:function})
+endsnippet
+
+snippet pl "Plot function"
+plot(${1:${VISUAL:x}}, ${0:y})
+endsnippet
+
+snippet ggp "ggplot2 plot"
+ggplot(${1:${VISUAL:data}}, aes(${0:aesthetics}))
+endsnippet
+
+snippet fis "Fisher test"
+fisher.test(${1:x}, ${0:y})
+endsnippet
+
+snippet chi "Chi Squared test"
+chisq.test(${1:x}, ${0:y})
+endsnippet
+
+snippet tt "t-test"
+t.test(${1:x}, ${0:y})
+endsnippet
+
+snippet wil "Wilcox test"
+wilcox.test(${1:x}, ${0:y})
+endsnippet
+
+snippet cor "Correlation test"
+cor.test(${1:x}, ${0:y})
+endsnippet
+
+snippet fte "FTE test"
+var.test(${1:x}, ${0:y})
+endsnippet
+
+snippet kvt "KV test"
+kv.test(${1:x}, ${0:y})
+endsnippet
+
+##############################
+#        tidyverse           #
+##############################
+
+
+snippet summ "summarise" A
+summarise(${0:${VISUAL:variable}})
+endsnippet
+
+
+snippet flt "filter" A
+filter(${0:${VISUAL:variable}})
+endsnippet
+
+snippet slt "select" A
+select(${0:${VISUAL:variable}})
+endsnippet
+
+snippet mut "mutate" A
+mutate(${0:${VISUAL:variable}})
+endsnippet
+
+snippet readd "read delim" A
+read_delim(${0:${VISUAL:variable}})
+endsnippet 
+
+snippet innj "inner_join" A
+inner_join(${1:${VISUAL:variable}}, by = $2) $0
+endsnippet
+
+snippet readc "read csv" A
+read_csv(${0:${VISUAL:variable}})
+endsnippet
+
